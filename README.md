@@ -11,14 +11,14 @@ docker logs <CONTAINER_ID>
 
 You will see an output like the following:
 
-========================================================================
-You can now connect to this Ubuntu container via SSH using:
+    ========================================================================
+    You can now connect to this Ubuntu container via SSH using:
+    
+        ssh -p <port> root@<host>
+    and enter the root password 'U0iSGVUCr7W3' when prompted
 
-    ssh -p <port> root@<host>
-and enter the root password 'U0iSGVUCr7W3' when prompted
-
-Please remember to change the above password as soon as possible!
-========================================================================
+    Please remember to change the above password as soon as possible!
+    ========================================================================
 
 In this case, U0iSGVUCr7W3 is the password allocated to the root user.
 
