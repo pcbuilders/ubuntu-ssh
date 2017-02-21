@@ -2,7 +2,7 @@ FROM       ubuntu:16.10
 MAINTAINER lnterface "https://github.com/lnterface/ubuntu-ssh"
 
 RUN apt-get update && \
-    apt-get install -y openssh-server pwgen && \
+    apt-get install -y openssh-server pwgen nginx && \
     apt-get clean all
     
 RUN mkdir /var/run/sshd
