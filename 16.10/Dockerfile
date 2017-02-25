@@ -1,7 +1,7 @@
 FROM       ubuntu:16.10
 MAINTAINER lnterface "https://github.com/lnterface/ubuntu-ssh"
 
-RUN mkdir -p /var/run/sshd
+RUN mkdir -p /var/run/sshd \
     && apt-get update \
     && apt-get install -y --no-install-recommends openssh-server pwgen dropbear nginx aria2 \
     && sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config \
