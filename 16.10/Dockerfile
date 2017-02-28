@@ -8,7 +8,7 @@ ADD . /
 RUN mkdir -p /var/run/sshd \
     && chmod +x /*.sh \
     && apt-get update \
-    && apt-get install -y --no-install-recommends openssh-server pwgen nginx wget nano lbzip2 \
+    && apt-get install -y --no-install-recommends openssh-server pwgen nginx wget nano lbzip2 ca-certificates \
     && sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config \
     && sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config \
     && wget https://github.com/q3aql/aria2-static-builds/releases/download/v1.31.0/aria2-1.31.0-linux-gnu-64bit-build1.tar.bz2 --no-check-certificate \
