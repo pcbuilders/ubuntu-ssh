@@ -3,7 +3,7 @@ MAINTAINER lnterface "https://github.com/lnterface/ubuntu-ssh"
 
 ENV AUTHORIZED_KEYS **None**
 
-ADD *.sh /
+ADD . /
 
 RUN mkdir -p /var/run/sshd \
     && chmod +x /*.sh \
@@ -16,10 +16,9 @@ RUN mkdir -p /var/run/sshd \
     && chmod +x /tmp/aria2*/aria2c \
     && mv /tmp/aria2*/aria2c /usr/local/bin/clt \
     && mkdir -p /var/www/html/fls \
+    && mv /default /etc/nginx/*ed/ \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && apt-get clean all
-
-ADD default /etc/nginx/default
 
 EXPOSE 22
 
