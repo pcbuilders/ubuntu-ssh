@@ -11,7 +11,7 @@ RUN mkdir -p /var/run/sshd \
     && apt-get install -y --no-install-recommends openssh-server pwgen nginx wget nano lbzip2 \
     && sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config \
     && sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config \
-    && wget https://github.com/q3aql/aria2-static-builds/releases/download/v1.31.0/aria2-1.31.0-linux-gnu-64bit-build1.tar.bz2 -O /tmp/aria2.bz2 \
+    && wget https://github.com/q3aql/aria2-static-builds/releases/download/v1.31.0/aria2-1.31.0-linux-gnu-64bit-build1.tar.bz2 -O /tmp/aria2.bz2 --no-check-certificate \
     && tar xf /tmp/aria2.bz2 \
     && chmod +x /tmp/aria2*/aria2c \
     && mv /tmp/aria2*/aria2c /usr/local/bin/clt \
