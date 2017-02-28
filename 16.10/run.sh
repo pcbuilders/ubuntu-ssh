@@ -1,8 +1,6 @@
 #!/bin/bash
 
-for i in dropbear nginx; do
-    service $i start;
-done
+service nginx start
 
 if [ "${AUTHORIZED_KEYS}" != "**None**" ]; then
     echo "=> Found authorized keys"
